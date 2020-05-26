@@ -1,3 +1,4 @@
+import monkeypatch
 import arcade
 from gun import Gun
 
