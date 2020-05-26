@@ -1,0 +1,30 @@
+
+CommandLineInterface CLI
+        GraphicalUserInterface GUI
+
+
+Game
+
+    Snake                         Y Y
+        Increasing difficulty
+    Pacman                        Y Y
+        Thoughtful Enemies/Bots
+    Platformer                    Y Y
+        Interesting map
+    Martial arts fighting game    Y Y
+        Combo
+    Gun play fighting game        Y Y
+        Gun variety     Violence
+    Fifa-like                     Y Y
+        Football        Kicking
+
+
+
+
+Increasing difficulty   Gun variety              2
+Thoughtful Enemies/Bots   Gun variety            2
+Interesting map   Gun variety                    2
+Gun variety   Violence                           2
+
+
+Multiplayer
