@@ -1,6 +1,7 @@
 import monkeypatch
 import arcade
 from gun import Gun
+from player import Player
 
 
 class Game(arcade.Window):
@@ -9,6 +10,7 @@ class Game(arcade.Window):
         arcade.set_background_color(arcade.color.WHITE)
         self.test_gun = Gun(300, 200)
         self.bullets = []
+        self.player = Player(50, 50)
 
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.ESCAPE:
@@ -21,6 +23,7 @@ class Game(arcade.Window):
         self.test_gun.draw()
         for bullet in self.bullets:
             bullet.draw()
+        self.player.draw()
 
     def on_update(self, deltatime):
         for bullet in self.bullets:
