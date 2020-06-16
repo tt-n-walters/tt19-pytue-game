@@ -25,6 +25,10 @@ moving_down = down
 moving_left = left
 moving_right = right
 
+
 class Player(Character):
     def __init__(self, center_x, center_y):
-        super().__init__(scale=2)
+        super().__init__(
+            stationary_up, stationary_down, stationary_left, stationary_right,
+            moving_up, moving_down, moving_left, moving_right,
+            scale=2, center_x=center_x, center_y=center_y)
