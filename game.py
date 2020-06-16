@@ -5,7 +5,7 @@ from player import Player
 
 class Game(arcade.Window):
     def __init__(self):
-        super().__init__(title="Game", width=1200, height=400, fullscreen=False)
+        super().__init__(title="Game", width=15 * 64, height=9 * 64, fullscreen=False)
         
         self.background_sprite = arcade.Sprite("assets/background.png", center_x=self.width / 2, center_y=self.height / 2)
         self.static_sprites = arcade.SpriteList(is_static=True)
