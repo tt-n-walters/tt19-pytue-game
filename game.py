@@ -23,6 +23,7 @@ class Game(arcade.Window):
         if symbol == arcade.key.SPACE:
             self.bullets.append(self.test_gun.fire())
         
+        # Start moving the player in the direction indicated
         if symbol == arcade.key.W:
             self.player.move_up(4)
         if symbol == arcade.key.A:
@@ -31,6 +32,18 @@ class Game(arcade.Window):
             self.player.move_down(4)
         if symbol == arcade.key.D:
             self.player.move_right(4)
+    
+    def on_key_release(self, symbol, modifiers):
+        # Stop moving the player if the correct key is released
+        if symbol == arcade.key.W and self.player.direction == "up":
+            self.player.stop()
+        if symbol == arcade.key.A and self.player.direction == "left":
+            self.player.stop()
+        if symbol == arcade.key.S and self.player.direction == "down":
+            self.player.stop()
+        if symbol == arcade.key.D and self.player.direction == "right":
+            self.player.stop()
+
 
     def on_draw(self):
         arcade.start_render()
@@ -49,6 +62,7 @@ class Game(arcade.Window):
             bullet.update()
         self.test_gun.update(deltatime)
         self.player.update()
+        self.player.update_animation(deltatime)
 
 
 Game()
