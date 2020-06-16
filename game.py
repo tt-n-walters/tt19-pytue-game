@@ -1,4 +1,3 @@
-import monkeypatch
 import arcade
 from gun import Gun
 from player import Player
@@ -30,11 +29,6 @@ class Game(arcade.Window):
             bullet.update()
         self.test_gun.update(deltatime)
 
-
-# Open the correct folder, so Python knows where to loads images from
-import os
-correct_location = os.path.dirname(__file__)
-os.chdir(correct_location)
 
 Game()
 arcade.run()
