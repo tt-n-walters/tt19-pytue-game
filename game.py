@@ -6,7 +6,11 @@ from player import Player
 class Game(arcade.Window):
     def __init__(self):
         super().__init__(title="Game", width=1200, height=400, fullscreen=False)
-        arcade.set_background_color(arcade.color.WHITE)
+        
+        self.background_sprite = arcade.Sprite("assets/background.png", center_x=self.width / 2, center_y=self.height / 2)
+        self.static_sprites = arcade.SpriteList(is_static=True)
+        self.static_sprites.append(self.background_sprite)
+
         self.test_gun = Gun(300, 200)
         self.bullets = []
         self.player = Player(50, 50)
@@ -19,6 +23,8 @@ class Game(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
+        self.static_sprites.draw()
+
         self.test_gun.draw()
         for bullet in self.bullets:
             bullet.draw()
