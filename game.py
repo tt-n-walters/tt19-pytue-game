@@ -22,6 +22,15 @@ class Game(arcade.Window):
             arcade.close_window()
         if symbol == arcade.key.SPACE:
             self.bullets.append(self.test_gun.fire())
+        
+        if symbol == arcade.key.W:
+            self.player.move_up(4)
+        if symbol == arcade.key.A:
+            self.player.move_left(4)
+        if symbol == arcade.key.S:
+            self.player.move_down(4)
+        if symbol == arcade.key.D:
+            self.player.move_right(4)
 
     def on_draw(self):
         arcade.start_render()
@@ -39,6 +48,7 @@ class Game(arcade.Window):
         for bullet in self.bullets:
             bullet.update()
         self.test_gun.update(deltatime)
+        self.player.update()
 
 
 Game()
